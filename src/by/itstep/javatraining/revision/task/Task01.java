@@ -36,6 +36,9 @@ package by.itstep.javatraining.revision.task;
 
 public class Task01 {
     public static int task01(int hour1, int minute1, int second1, int hour2, int minute2, int second2) {
-        return -1;
+        if (hour1 < 0 || hour1 > 23 || minute1 < 0 || minute1 > 59 || second1 < 0 || second1 > 59 || hour2 < 0 || hour2 > 23 || minute2 < 0 || minute2 > 59 || second2 < 0 || second2 > 59) {
+            return -1;
+        }
+        return Math.abs((hour1 * 60 + minute1) * 60 + second1 - ((hour2 * 60 + minute2) * 60 + second2));
     }
 }
