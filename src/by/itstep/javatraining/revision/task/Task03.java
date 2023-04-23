@@ -34,11 +34,25 @@ package by.itstep.javatraining.revision.task;
  *	[output 5]: -1
  *
  *	[ input 6]: 10 20 6 21
- *	[output 6]: -1 
+ *	[output 6]: -1
  */
 
 public class Task03 {
     public static int task03(int n, int m, int x, int y) {
-        return -1;
+        int distance = 0;
+        int minSize = n;
+        int maxSize = m;
+        if (n >= m) {
+            maxSize = n;
+            minSize = m;
+        }
+        if (n <= 0 || x < 0 || y < 0 || maxSize < y || minSize < x) {
+            distance = -1;
+        } else if (x != 0 && y != 0) {
+            int minDistance = minSize - x >= x ? x : minSize - x;
+            int maxDistance = maxSize - y >= y ? y : maxSize - y;
+            distance = minDistance > maxDistance ? maxDistance : minDistance;
+        }
+        return distance;
     }
 }
