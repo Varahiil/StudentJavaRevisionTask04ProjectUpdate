@@ -37,6 +37,13 @@ package by.itstep.javatraining.revision.task;
 
 public class Task02 {
     public static String task02(int number) {
-        return "error";
+        int hour = (number / 3600) % 24;
+        int minutes = number / 60 % 60;
+        int second = number % 60;
+        String result = "error";
+        if (number >= 0) {
+            result = hour + ":" + (minutes <= 9 ? "0" + minutes : minutes) + ":" + (second <= 9 ? "0" + second : second);
+        }
+        return result;
     }
 }
