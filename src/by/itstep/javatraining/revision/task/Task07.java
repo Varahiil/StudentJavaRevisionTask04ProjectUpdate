@@ -38,6 +38,22 @@ package by.itstep.javatraining.revision.task;
 
 public class Task07 {
     public static int task07(int v, int t) {
-        return 0;
+        int lenght = 56;
+        int result = 0;
+
+        if (t < 0) {
+            result = -1;
+        } else if (v != 0 && t != 0) {
+            if (v > 0 && v * t < lenght) {
+                result = v * t;
+            } else if (v < 0 && v * t > -lenght) {
+                result = lenght + v * t;
+            } else if (v * t > lenght) {
+                result = v * t % lenght;
+            } else {
+                result = lenght + (v * t % lenght);
+            }
+        }
+        return result;
     }
 }
