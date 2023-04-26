@@ -41,19 +41,30 @@ public class Task07 {
         int lenght = 56;
         int result = 0;
 
+//        if (t < 0) {
+//            result = -1;
+//        } else if (v != 0 && t != 0) {
+//            if (v > 0 && v * t < lenght) {
+//                result = v * t;
+//            } else if (v < 0 && v * t > -lenght) {
+//                result = lenght + v * t;
+//            } else if (v * t > lenght) {
+//                result = v * t % lenght;
+//            } else {
+//                result = lenght + (v * t % lenght);
+//            }
+//        }
+
         if (t < 0) {
             result = -1;
         } else if (v != 0 && t != 0) {
-            if (v > 0 && v * t < lenght) {
-                result = v * t;
-            } else if (v < 0 && v * t > -lenght) {
-                result = lenght + v * t;
-            } else if (v * t > lenght) {
+            if (v > 0) {
                 result = v * t % lenght;
             } else {
                 result = lenght + (v * t % lenght);
             }
         }
+
         return result;
     }
 }
